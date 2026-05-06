@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
     font-family: 'PyeojinGothic-Bold';
@@ -15,5 +15,5 @@
 }
 
 body {
-  font-family: "PyeojinGothic-Bold";
+    font-family: 'PyeojinGothic-Bold';
 }

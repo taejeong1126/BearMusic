@@ -1,51 +1,50 @@
 {
-  "name": "bearmusic",
-  "version": "3.0.0",
-  "license": "FILE",
-  "description": "자동 싱크 가사 유튜브 리릭 비디오 생성기 - 비디오 생성 전용 서버 ",
-  "repository": "https://github.com/joon-102/BearMusic/tree/main",
-  "dependencies": {
-    "@remotion/cli": "4.0.312",
-    "@remotion/tailwind-v4": "4.0.312",
-    "axios": "^1.10.0",
-    "cheerio": "^1.1.0",
-    "dayjs": "^1.11.18",
-    "dotenv": "^17.0.0",
-    "fluent-ffmpeg": "^2.1.3",
-    "mongoose": "^8.16.1",
-    "music-metadata": "^11.6.0",
-    "playwright": "^1.53.2",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "remotion": "4.0.312",
-    "sharp": "^0.34.2",
-    "tailwindcss": "4.0.0",
-    "tmp-promise": "^3.0.3",
-    "ts-node": "^10.9.2",
-    "youtube-dl-exec": "^3.0.22",
-    "youtube-videos-uploader": "^2.0.26"
-  },
-  "devDependencies": {
-    "@remotion/eslint-config-flat": "4.0.312",
-    "@types/express": "^5.0.3",
-    "@types/fluent-ffmpeg": "^2.1.27",
-    "@types/react": "19.0.0",
-    "@types/tmp": "^0.2.6",
-    "@types/web": "0.0.166",
-    "@types/yt-search": "^2.10.3",
-    "eslint": "9.19.0",
-    "prettier": "3.3.3",
-    "typescript": "5.8.2"
-  },
-  "scripts": {
-    "dev": "remotion studio ./remotion/index.ts",
+    "name": "bearmusic",
     "build": "tsc",
-    "start": "node ./dist/index.js",
-    "lint": "eslint src && tsc",
-    "make-blurred": "ts-node remotion/util/make-blurred.ts",
-    "convert-webp": "ts-node remotion/util/convert-webp.ts"
-  },
-  "sideEffects": [
-    "*.css"
-  ]
+    "version": "4.0.0",
+    "packageManager": "yarn@4.12.0",
+    "dependencies": {
+        "@remotion/bundler": "^4.0.457",
+        "@remotion/cli": "4.0.457",
+        "@remotion/media": "^4.0.457",
+        "@remotion/renderer": "4.0.457",
+        "@remotion/tailwind-v4": "4.0.457",
+        "axios": "^1.16.0",
+        "cheerio": "^1.2.0",
+        "cli-progress": "^3.12.0",
+        "dotenv": "^17.4.2",
+        "googleapis": "^171.4.0",
+        "mongoose": "8.16.1",
+        "music-metadata": "^11.12.3",
+        "node-cron": "^4.2.1",
+        "playwright": "^1.59.1",
+        "react": "^19.2.5",
+        "react-dom": "^19.2.5",
+        "remotion": "4.0.457",
+        "sharp": "^0.34.5",
+        "tailwindcss": "^4.2.4",
+        "youtube-dl-exec": "^3.1.6",
+        "youtube-sr": "^4.3.12"
+    },
+    "devDependencies": {
+        "@babel/parser": "^7.29.3",
+        "@types/cli-progress": "^3",
+        "@types/node": "^25.6.0",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "typescript": "^6.0.3"
+    },
+    "scripts": {
+        "dev:studio": "remotion studio ./remotion/index.ts",
+        "start": "node dist/index.js",
+        "build": "tsc",
+        "build:watch": "tsc -w",
+        "auth": "node dist/youtube-auth.js",
+        "queue": "node dist/video-queue.ts"
+    },
+    "dependenciesMeta": {
+        "youtube-dl-exec@3.1.6": {
+            "unplugged": true
+        }
+    }
 }
