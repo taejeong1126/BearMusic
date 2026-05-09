@@ -57,7 +57,8 @@ export default async function renderVideo(): Promise<string | null> {
             codec: 'h264',
             hardwareAcceleration: 'if-possible',
             outputLocation: VIDEO_PATH,
-            concurrency: 4,
+            concurrency: 2,
+            timeoutInMilliseconds: 120000,
             imageFormat: 'jpeg',
             jpegQuality: 85,
             onProgress(progress) {
