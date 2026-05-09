@@ -40,7 +40,7 @@
         "build": "tsc",
         "build:watch": "tsc -w",
         "auth": "node dist/youtube-auth.js",
-        "queue": "node dist/video-queue.ts"
+        "queue": "node dist/video-queue.js"
     },
     "dependenciesMeta": {
         "youtube-dl-exec@3.1.6": {
