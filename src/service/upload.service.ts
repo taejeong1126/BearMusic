@@ -43,6 +43,9 @@ export default async function uploadVideo(track: TrackInfo): Promise<any | null>
                     description: [
                         `🎶 본 영상은 가사 자막 영상입니다, 수익 창출은 되지 않습니다.`,
                         ``,
+                        `🎶 BEARMUSIC의 지속적인 영상 제작은 여러분의 후원으로 큰 힘이 됩니다.`,
+                        `☕ https://fairy.hada.io/@bearmusic`,
+                        ``,
                         `🎧 Title : ${title}`,
                         `🎤 Artist : ${artist}`,
                         `💿 Album : ${track.album}`,
