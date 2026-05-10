@@ -35,7 +35,7 @@ const api = axios.create({
 });
 
 const getChart = async (type: string): Promise<Track[]> => {
-    const { data } = await api.get<string>(`https://music.bugs.co.kr/chart/track/day/${type}`);
+    const { data } = await api.get<string>(`https://music.bugs.co.kr/chart/track/${type}`);
     const $ = load(data);
 
     const tracks: Track[] = [];
@@ -120,7 +120,27 @@ const getPendingItem = async (trackId: string): Promise<PendingItem | null> => {
         const run = async () => {
             console.log('\n[STEP] 새 차트 확인 중...');
 
-            const types = ['nb', 'nfa', 'nindie', 'nrs', 'nost', 'nkrock', 'nid', 'kpop', 'total'];
+            const types = [
+                'day/nb',
+                'day/nfa',
+                'day/nindie',
+                'day/nrs',
+                'day/nost',
+                'day/nkrock',
+                'day/nid',
+                'day/kpop',
+                'day/total',
+                'week/nb',
+                'week/nfa',
+                'week/nindie',
+                'week/nrs',
+                'week/nost',
+                'week/nkrock',
+                'week/nid',
+                'week/kpop',
+                'week/total',
+                'realtime/total'
+            ];
 
             const results = await Promise.all(types.map((type) => getChart(type)));
 
